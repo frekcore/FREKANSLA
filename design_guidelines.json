@@ -1,0 +1,81 @@
+{
+  "project_name": "FREKANSLA v0.1",
+  "theme_mode": "dark",
+  "typography": {
+    "headings": "Rajdhani, sans-serif",
+    "body": "JetBrains Mono, monospace",
+    "rules": {
+      "h1": "text-4xl tracking-tighter uppercase font-light",
+      "h2": "text-2xl tracking-tight uppercase font-semibold",
+      "labels": "text-xs tracking-[0.2em] uppercase font-mono text-gray-400",
+      "banned_fonts": ["Inter", "Roboto", "Open Sans", "Lato"]
+    },
+    "instructions": "Import Rajdhani and JetBrains Mono via Google Fonts in index.css or index.html."
+  },
+  "colors": {
+    "background": {
+      "daw": "#0A0A0A",
+      "plugin_surface": "#141416",
+      "console": "#050505"
+    },
+    "accents": {
+      "electric_blue": "#00E5FF",
+      "gold": "#FFD700",
+      "luminous_blue": "rgba(0, 229, 255, 0.6)",
+      "luminous_gold": "rgba(255, 215, 0, 0.4)"
+    },
+    "status": {
+      "verified_green": "#00E676",
+      "warning_orange": "#FF9100",
+      "error_red": "#FF3D00"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#A0A0A5",
+      "muted": "#505055"
+    },
+    "banned_colors": ["#7351B7", "purple", "violet"]
+  },
+  "visual_enhancers": {
+    "plugin_luminous_edge": "Relative container with an absolute pseudo-element inset-[-1px] bg-gradient-to-br from-[#FFD700] to-[#00E5FF] rounded-xl z-[-1] opacity-50 blur-[2px]",
+    "glassmorphism": "backdrop-blur-xl bg-[#141416]/80 border border-white/10",
+    "buttons": "bg-transparent border border-[#00E5FF] text-[#00E5FF] hover:bg-[#00E5FF]/10 hover:shadow-[0_0_15px_rgba(0,229,255,0.5)] transition-colors duration-300",
+    "surfaces": "No pure transparent backgrounds under content. Always use #141416 or glassmorphism with opacity > 80%."
+  },
+  "layouts": {
+    "screen_1_creative_engine": {
+      "description": "Simulated DAW decor with a floating central plugin window.",
+      "daw_background": "Left sidebar (Synth 1/2 tracks), top transport bar (124 BPM, play/stop), right mixer panel. Muted colors, dark grays.",
+      "plugin_window": "Centered floating modal. Anthracite background (#141416), luminous edges.",
+      "plugin_header": "FREKANSLA title, 'FREK CORE connected' (green dot), 'L2 Secured' badge.",
+      "sonic_flow": "Central wide block showing animated waveform (gold/blue).",
+      "macro_controls": "Bottom section with 4 controls: WARM ANALOG (slider/knob), INTENTION MORPH (central 2D XY pad), HARMONIC AGGRESSION (slider/knob), SPATIAL DEPTH (slider/knob)."
+    },
+    "screen_2_certification_portal": {
+      "description": "Dashboard for .FK object creation and verification.",
+      "left_column": "4-step vertical pipeline (Session Analyzer, Asset Compiler, FK Object Creator, Secure Signature). Use a vertical stepper with glowing active nodes.",
+      "right_column": ".FK Explorer and Diagnostics Console. Terminal-like black background, green/blue mono text.",
+      "bottom_action_bar": "Sticky bottom bar with PACKAGE AS .FK OBJECT, EXPORT AUDIO, SECURE & PUBLISH TO KORA buttons."
+    }
+  },
+  "components": {
+    "intention_morph_sphere": "A framer-motion drag container. Parent: relative, circular or square boundary border-white/10. Child: glowing sphere (radial gradient gold to blue) with 'drag' enabled.",
+    "sonic_flow_visualizer": "Use a flex container of narrow vertical motion.divs with changing heights and bg-gradients (gold/blue) to simulate real-time audio.",
+    "diagnostics_console": "Terminal aesthetic. Black background, monospace font, lines appearing sequentially to simulate 'inspect, check, verify, doctor'.",
+    "status_badges": "Pill-shaped, uppercase, thin font, 1px solid border matching the status color with a 10% opacity background of the same color."
+  },
+  "motion": {
+    "transitions": "Use specific properties (e.g., transition-colors, transition-transform). Do not use 'transition-all'.",
+    "hover_states": "Buttons and knobs must glow slightly on hover (box-shadow).",
+    "sonic_flow": "Continuous subtle height animation for waveform bars using Framer Motion."
+  },
+  "universal_guidelines_for_main_agent": [
+    "Do not use generic centered layouts (.App { text-align: center; }).",
+    "Every interactive element (buttons, tabs, inputs, draggable spheres) MUST have a data-testid attribute.",
+    "Use Rajdhani for all headings and JetBrains Mono for all data/technical readouts.",
+    "Ensure contrast requirements are met (APCA/WCAG). Use light text on dark backgrounds.",
+    "NEVER use placeholder text for images. If an avatar or logo is needed, use lucide-react icons as fallbacks.",
+    "Create custom components in .js extensions (e.g. /app/frontend/src/components/ui/button.js). Do not use .tsx.",
+    "Maintain the 'Anthracite & Neon' Pro-Audio VST plugin aesthetic strictly. Use heavy technical UI paradigms."
+  ]
+}
