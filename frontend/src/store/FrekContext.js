@@ -25,6 +25,16 @@ export function FrekProvider({ children }) {
   const [duration, setDuration] = useState(8.0);
   const [sessionTitle, setSessionTitle] = useState("Aurora Grit");
   const [lastObject, setLastObject] = useState(null);
+  const [vintage, setVintage] = useState({
+    eq_low: 50, eq_mid: 50, eq_high: 50, eq_freq: 40, bypass: false,
+    comp_threshold: 60, comp_ratio: 30, comp_attack: 20, comp_release: 40, comp_makeup: 20,
+    sat_drive: 25, sat_bright: false,
+  });
+
+  const setVintageParam = useCallback((name, value) => {
+    engineRef.current.setVintage(name, value);
+    setVintage((v) => ({ ...v, [name]: value }));
+  }, []);
 
   useEffect(() => {
     getIdentity().then(setIdentity).catch(() => {});
@@ -77,6 +87,8 @@ export function FrekProvider({ children }) {
     setSessionTitle,
     lastObject,
     setLastObject,
+    vintage,
+    setVintageParam,
   };
 
   return <FrekContext.Provider value={value}>{children}</FrekContext.Provider>;

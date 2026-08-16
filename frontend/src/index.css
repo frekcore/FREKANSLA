@@ -123,3 +123,79 @@ body {
 @layer base {
   [data-debug-wrapper="true"] { display: contents !important; }
 }
+
+/* ===== FREKANSLA v0.1.1 — faithful plugin materials ===== */
+
+/* metallic brushed plugin surface */
+.metal-surface {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.4)),
+    repeating-linear-gradient(90deg, #17181b 0px, #191a1e 2px, #151619 4px),
+    #16171a;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -2px 8px rgba(0,0,0,0.6);
+}
+
+.plugin-frame {
+  background: linear-gradient(180deg, #1c1d21 0%, #101114 60%, #0b0c0e 100%);
+  border: 1px solid #2a2c31;
+  border-radius: 14px;
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.6),
+    0 0 40px rgba(0,229,255,0.06),
+    0 30px 80px -20px rgba(0,0,0,0.9),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.plugin-edge {
+  position: relative;
+}
+.plugin-edge::after {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(120,200,255,0.35), rgba(0,0,0,0) 30%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  pointer-events: none;
+}
+
+.inset-panel {
+  background: radial-gradient(120% 120% at 50% 0%, #0e0f12 0%, #060708 100%);
+  border: 1px solid #24262b;
+  box-shadow: inset 0 2px 12px rgba(0,0,0,0.8), inset 0 0 40px rgba(0,0,0,0.5);
+  border-radius: 12px;
+}
+
+/* wood side panels for Vintage Channel */
+.wood-panel {
+  background:
+    repeating-linear-gradient(180deg, rgba(0,0,0,0.18) 0px, rgba(0,0,0,0) 3px, rgba(255,220,180,0.05) 6px, rgba(0,0,0,0.14) 9px),
+    linear-gradient(180deg, #7a4a2b, #5a3620 40%, #4a2c19 70%, #3a2213);
+  box-shadow: inset -6px 0 12px rgba(0,0,0,0.5), inset 3px 0 4px rgba(255,200,150,0.15);
+}
+
+.vintage-face {
+  background:
+    radial-gradient(circle at 50% -20%, #26282c 0%, #131417 55%, #0c0d0f 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -20px 60px rgba(0,0,0,0.6);
+}
+
+/* VU meter cream face */
+.vu-face {
+  background: linear-gradient(180deg, #efe9d0 0%, #d9cfa6 100%);
+  box-shadow: inset 0 0 18px rgba(120,90,30,0.35), 0 2px 4px rgba(0,0,0,0.6);
+}
+
+/* certification circular node halos */
+.cert-halo { box-shadow: 0 0 24px 2px currentColor, inset 0 0 12px rgba(255,255,255,0.15); }
+
+/* screw detail */
+.screw {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #4a4d52, #1a1b1e);
+  box-shadow: inset 0 0 2px #000, 0 1px 1px rgba(255,255,255,0.1);
+  position: relative;
+}
+.screw::before { content:''; position:absolute; inset:3px 1px; background:#0d0e10; transform:rotate(35deg); }
+
